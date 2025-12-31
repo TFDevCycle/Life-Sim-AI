@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Life Sim AI - Projektübersicht</title>
+<link rel="stylesheet" href="doc_style.css">
+<style>
+body {
+    font-family: "Consolas", monospace;
+    background-color: #0a1e35;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+.header {
+    background-color: #152a45;
+    text-align: center;
+    padding: 60px 20px;
+    border-bottom: 2px solid #3a4f7f;
+}
+.header h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #ffcc33;
+}
+.header p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #1f2f4f;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+.section h2 {
+    color: #ffcc33;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #3a4f7f;
+    padding-bottom: 5px;
+}
+.section ul {
+    margin-left: 20px;
+}
+.highlight {
+    color: #33ccff;
+    font-weight: bold;
+}
+</style>
+<!-- Navbar -->
+<div id="navbar">
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="main.html">Main.py</a>
+        <a href="agent.html">Agent.py</a>
+        <a href="tribe.html">tribe.py</a>
+        <a href="enemy.html">Enemy.py</a>
+        <a href="house.html">House.py</a>
+        <a href="tree.html">Tree.py</a>
+        <a href="stone.html">Stone.py</a>
+        <a href="bush.html">Bush.py</a>
+    </nav>
+</div>
+</div>
+</head><body>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <h1>Life Sim AI</h1>
+    <p>Eine intelligente, autonome Lebenssimulation mit lernenden Agenten, Ressourcen, Häusern, Gegnern und Stammesstrukturen.</p>
+</div>
+
+<div class="section">
+    <h2>Über das Projekt</h2>
+    <p>
+        <span class="highlight">Life Sim AI</span> simuliert eine dynamische Welt, in der Agenten autonom handeln. 
+        Die Agenten lernen aus Erfahrungen, treffen Entscheidungen basierend auf einem Reward-System und reagieren auf
+        Umweltbedingungen.
+    </p>
+    <p>
+        Die Welt umfasst einen <span class="highlight">Tag-/Nacht-Zyklus</span>. Tagsüber erkunden Agenten die Welt und sammeln Ressourcen, 
+        bauen Häuser oder erweitern bestehende Stämme (<span class="highlight">Tribes</span>). Nachts ziehen sie sich in Häuser zurück, 
+        reproduzieren sich und schützen sich vor Gegnern.
+    </p>
+</div>
+
+<div class="section">
+    <h2>Projektstruktur</h2>
+    <ul>
+        <li><span class="highlight">Agent:</span> KI-gesteuerte Charaktere mit Hunger, Alter, Belohnungen, Memory und Tribe-Zugehörigkeit.</li>
+        <li><span class="highlight">Enemy:</span> Gegner, die Agenten angreifen und deren Verhalten überwachen.</li>
+        <li><span class="highlight">House:</span> Schutzräume, in denen Agenten schlafen, sich fortpflanzen und neue Tribes gründen können.</li>
+        <li><span class="highlight">Tree, Stone, Bush:</span> Ressourcen zum Sammeln, beeinflussen die Überlebensfähigkeit der Agenten.</li>
+        <li><span class="highlight">Tribe:</span> Soziale Gruppierung von Agenten. Tribes haben Häuser, Mitglieder und eine eigene Farbe.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>Simulation & Features</h2>
+    <ul>
+        <li>Autonome Agenten mit <span class="highlight">lernendem Verhalten</span> und Memory-System.</li>
+        <li>Belohnungssystem für Entscheidungen (Reward-System).</li>
+        <li>Tag-/Nacht-Zyklus mit unterschiedlichem Verhalten:</li>
+        <ul>
+            <li>Tag: Ressourcen sammeln, Häuser bauen, erkunden</li>
+            <li>Nacht: Schutz in Häusern, Fortpflanzung, Verteidigung</li>
+        </ul>
+        <li>Fortpflanzung innerhalb von Häusern nur nachts.</li>
+        <li>Dynamisches Ressourcenmanagement (Bäume, Steine, Büsche) mit respawn.</li>
+        <li>Gegnerpatrouillen mit Sichtfeld und Jagdverhalten.</li>
+        <li>Stammes-System (<span class="highlight">Tribes</span>) mit:</li>
+        <ul>
+            <li>Farblich markierten Mitgliedern</li>
+            <li>Häusern und Zentrum</li>
+            <li>Mitgliederverwaltung und Wachstum</li>
+        </ul>
+        <li>Interaktive grafische Darstellung mit <span class="highlight">Pygame</span>.</li>
+        <li>Detaillierte UI mit:</li>
+        <ul>
+            <li>Bevölkerung (Gesamt, Kinder, Erwachsene, Hungrig)</li>
+            <li>Überleben (Ø Alter, Ø Hunger)</li>
+            <li>KI-Lernen (Ø Reward, Top Aktion)</li>
+            <li>Infrastruktur (Häuser, freie Plätze)</li>
+            <li>Tribes (Anzahl, Mitglieder, Häuser)</li>
+            <li>Weltstatus (Phase, Gegner, Ressourcen)</li>
+        </ul>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>Tribes / Stammeslogik</h2>
+    <p>
+        Tribes sind dynamische soziale Gruppen, die durch Hausbau und Nähe entstehen:
+    </p>
+    <ul>
+        <li>Ein Agent ohne Tribe kann einen neuen Tribe gründen, wenn er ein Haus baut.</li>
+        <li>Tribes haben ein zentrales Haus (Center) und Mitglieder mit individueller Farbe.</li>
+        <li>Agenten in Reichweite eines bestehenden Tribe-Hauses können diesem Tribe beitreten.</li>
+        <li>Fortpflanzung kann nur innerhalb eines Hauses erfolgen, wodurch der Tribe wächst.</li>
+        <li>UI zeigt Anzahl der Stämme, Mitglieder pro Tribe und Häuser pro Tribe.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>Nutzung der Dokumentation</h2>
+    <p>
+        Nutze die Navbar, um direkt zu den Modul-Dokumentationen zu navigieren. Jede Seite zeigt:
+    </p>
+    <ul>
+        <li>Klassen und Methoden</li>
+        <li>Attribute und Rückgabewerte</li>
+        <li>Zusammenhänge und Logik</li>
+        <li>Verweise auf verwandte Module</li>
+    </ul>
+</div>
+
+</body>
+</html>
