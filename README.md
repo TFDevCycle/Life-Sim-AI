@@ -101,5 +101,5 @@ Die KI-Agenten treffen Entscheidungen basierend auf einem Belohnungssystem (Rewa
 1. Repository klonen:
 
 ```bash
-git clone https://github.com/deinusername/life-sim-ai.git
+git clone https://github.com/tfdevcycle/life-sim-ai.git
 cd life-sim-ai
