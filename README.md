@@ -12,10 +12,7 @@ Eine intelligente, autonome Lebenssimulation, in der Agenten lernen, überleben,
 - [Tribes / Stammeslogik](#tribes--stammeslogik)
 - [Bekannte Einschränkungen](#bekannte-einschränkungen)
 - [Installation](#installation)
-- [Nutzung](#nutzung)
 - [Screenshots](#screenshots)
-- [Zukünftige Verbesserungen](#zukünftige-verbesserungen)
-- [Lizenz](#lizenz)
 
 ---
 
@@ -103,3 +100,9 @@ Die KI-Agenten treffen Entscheidungen basierend auf einem Belohnungssystem (Rewa
 ```bash
 git clone https://github.com/tfdevcycle/life-sim-ai.git
 cd life-sim-ai
+```
+
+---
+
+## Screenshots
+
