@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module agent</title>
+<link rel="stylesheet" href="doc_style.css">
+<div id="navbar">
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="main.html">Main.py</a>
+        <a href="agent.html">Agent.py</a>
+        <a href="tribe.html">tribe.py</a>
+        <a href="enemy.html">Enemy.py</a>
+        <a href="house.html">House.py</a>
+        <a href="tree.html">Tree.py</a>
+        <a href="stone.html">Stone.py</a>
+        <a href="bush.html">Bush.py</a>
+    </nav>
+</div>
+</div>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">agent</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cfaktu%5Cdesktop%5Cvscode%5Clife%20sim%20ai%5Cagent.py">c:\users\faktu\desktop\vscode\life sim ai\agent.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="math.html">math</a><br>
+</td><td class="multicolumn"><a href="pygame.html">pygame</a><br>
+</td><td class="multicolumn"><a href="random.html">random</a><br>
+</td><td class="multicolumn"><a href="time.html">time</a><br>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="agent.html#Agent">Agent</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Agent">class <strong>Agent</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Agent">Agent</a>(x,&nbsp;y,&nbsp;memory=None,&nbsp;tribe=None,&nbsp;generation=0)<br>
+&nbsp;<br>
+Repräsentiert&nbsp;einen&nbsp;Agenten&nbsp;in&nbsp;der&nbsp;Simulation.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;(float):&nbsp;X-Position&nbsp;des&nbsp;Agenten.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;(float):&nbsp;Y-Position&nbsp;des&nbsp;Agenten.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;hunger&nbsp;(float):&nbsp;Hungerlevel&nbsp;(0-100).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;age&nbsp;(float):&nbsp;Alter&nbsp;des&nbsp;Agenten&nbsp;in&nbsp;Jahren.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;wood&nbsp;(int):&nbsp;Gesammelte&nbsp;Holzmenge.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;stone&nbsp;(int):&nbsp;Gesammelte&nbsp;Steinmenge.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;has_pickaxe&nbsp;(bool):&nbsp;Ob&nbsp;der&nbsp;<a href="#Agent">Agent</a>&nbsp;eine&nbsp;Spitzhacke&nbsp;besitzt.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;in_house&nbsp;(bool):&nbsp;Ob&nbsp;der&nbsp;<a href="#Agent">Agent</a>&nbsp;aktuell&nbsp;in&nbsp;einem&nbsp;Haus&nbsp;ist.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;current_house&nbsp;(House):&nbsp;Referenz&nbsp;auf&nbsp;das&nbsp;Haus,&nbsp;in&nbsp;dem&nbsp;der&nbsp;<a href="#Agent">Agent</a>&nbsp;ist.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;memory&nbsp;(dict):&nbsp;Lernwerte&nbsp;für&nbsp;verschiedene&nbsp;Aktionen.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;vision_radius&nbsp;(float):&nbsp;Wahrnehmungsradius&nbsp;für&nbsp;Ressourcen&nbsp;und&nbsp;Gegner.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;reproduction_cooldown&nbsp;(int):&nbsp;Zeit&nbsp;bis&nbsp;zur&nbsp;nächsten&nbsp;Fortpflanzung.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;reproduction_timer&nbsp;(int):&nbsp;Zähler&nbsp;für&nbsp;Fortpflanzung.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total_reward&nbsp;(float):&nbsp;Durchschnittlicher&nbsp;Reward&nbsp;der&nbsp;letzten&nbsp;Aktionen.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;reward_buffer&nbsp;(list):&nbsp;Zwischenspeicher&nbsp;für&nbsp;Reward-Glättung.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;reward_tick&nbsp;(float):&nbsp;Zeitstempel&nbsp;des&nbsp;letzten&nbsp;Reward-Updates.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;reward_interval&nbsp;(float):&nbsp;Intervall&nbsp;für&nbsp;Reward-Glättung.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tribe&nbsp;(Tribe):&nbsp;Zugehöriger&nbsp;Stamm.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;generation&nbsp;(int):&nbsp;Generation&nbsp;des&nbsp;Agenten&nbsp;innerhalb&nbsp;des&nbsp;Stammes.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Agent-__init__"><strong>__init__</strong></a>(self, x, y, memory=None, tribe=None, generation=0)</dt><dd><span class="code">Initialisiert&nbsp;einen&nbsp;Agenten&nbsp;mit&nbsp;Position,&nbsp;optionalem&nbsp;Memory,&nbsp;Tribe&nbsp;und&nbsp;Generation.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;(float):&nbsp;Start-X-Position.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;(float):&nbsp;Start-Y-Position.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;memory&nbsp;(dict,&nbsp;optional):&nbsp;Initiales&nbsp;Lern-Memory.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tribe&nbsp;(Tribe,&nbsp;optional):&nbsp;Zugehöriger&nbsp;Stamm.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;generation&nbsp;(int,&nbsp;optional):&nbsp;Generation&nbsp;innerhalb&nbsp;des&nbsp;Stammes.</span></dd></dl>
+
+<dl><dt><a name="Agent-add_reward"><strong>add_reward</strong></a>(self, r)</dt><dd><span class="code">Fügt&nbsp;einen&nbsp;Reward&nbsp;hinzu&nbsp;und&nbsp;glättet&nbsp;über&nbsp;den&nbsp;Puffer.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;(float):&nbsp;Reward-Wert.</span></dd></dl>
+
+<dl><dt><a name="Agent-choose_action"><strong>choose_action</strong></a>(self)</dt><dd><span class="code">Wählt&nbsp;zufällig&nbsp;eine&nbsp;Aktion&nbsp;basierend&nbsp;auf&nbsp;Memory-Werten.<br>
+Höher&nbsp;bewertete&nbsp;Aktionen&nbsp;werden&nbsp;häufiger&nbsp;gewählt.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;Name&nbsp;der&nbsp;gewählten&nbsp;Aktion.</span></dd></dl>
+
+<dl><dt><a name="Agent-distance"><strong>distance</strong></a>(self, obj)</dt><dd><span class="code">Berechnet&nbsp;die&nbsp;euklidische&nbsp;Distanz&nbsp;zu&nbsp;einem&nbsp;Objekt.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;obj:&nbsp;Objekt&nbsp;mit&nbsp;x-&nbsp;und&nbsp;y-Attributen.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float:&nbsp;Distanz&nbsp;zum&nbsp;Objekt.</span></dd></dl>
+
+<dl><dt><a name="Agent-draw"><strong>draw</strong></a>(self, surface)</dt><dd><span class="code">Zeichnet&nbsp;den&nbsp;Agenten&nbsp;auf&nbsp;dem&nbsp;Surface.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;surface:&nbsp;Pygame&nbsp;Surface.</span></dd></dl>
+
+<dl><dt><a name="Agent-find_nearest"><strong>find_nearest</strong></a>(self, objects)</dt><dd><span class="code">Findet&nbsp;das&nbsp;nächste&nbsp;sichtbare&nbsp;Objekt&nbsp;aus&nbsp;einer&nbsp;Liste.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;objects&nbsp;(list):&nbsp;Liste&nbsp;von&nbsp;Objekten&nbsp;mit&nbsp;x-&nbsp;und&nbsp;y-Attributen.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Objekt&nbsp;oder&nbsp;None:&nbsp;Nächstes&nbsp;sichtbares&nbsp;Objekt.</span></dd></dl>
+
+<dl><dt><a name="Agent-learn"><strong>learn</strong></a>(self, action, reward)</dt><dd><span class="code">Aktualisiert&nbsp;das&nbsp;Memory&nbsp;basierend&nbsp;auf&nbsp;Aktion&nbsp;und&nbsp;Reward.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;action&nbsp;(str):&nbsp;Name&nbsp;der&nbsp;Aktion.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;reward&nbsp;(float):&nbsp;Reward&nbsp;für&nbsp;diese&nbsp;Aktion.</span></dd></dl>
+
+<dl><dt><a name="Agent-make_child"><strong>make_child</strong></a>(self, other)</dt><dd><span class="code">Erzeugt&nbsp;ein&nbsp;Kind-Agenten.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;other&nbsp;(<a href="#Agent">Agent</a>):&nbsp;Partner-<a href="#Agent">Agent</a>.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Agent">Agent</a>:&nbsp;Kind-<a href="#Agent">Agent</a>&nbsp;mit&nbsp;vererbtem&nbsp;Memory,&nbsp;Tribe&nbsp;und&nbsp;Generation.</span></dd></dl>
+
+<dl><dt><a name="Agent-move_random"><strong>move_random</strong></a>(self)</dt><dd><span class="code">Bewegt&nbsp;den&nbsp;Agenten&nbsp;zufällig&nbsp;innerhalb&nbsp;erlaubter&nbsp;Grenzen.</span></dd></dl>
+
+<dl><dt><a name="Agent-move_towards"><strong>move_towards</strong></a>(self, target)</dt><dd><span class="code">Bewegt&nbsp;den&nbsp;Agenten&nbsp;auf&nbsp;ein&nbsp;Ziel&nbsp;zu.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;target:&nbsp;Objekt&nbsp;mit&nbsp;x-&nbsp;und&nbsp;y-Attributen.</span></dd></dl>
+
+<dl><dt><a name="Agent-update"><strong>update</strong></a>(self, trees, stones, bushes, agents, houses, is_day, enemies)</dt><dd><span class="code">Hauptlogik&nbsp;pro&nbsp;Tick&nbsp;für&nbsp;den&nbsp;Agenten.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;trees,&nbsp;stones,&nbsp;bushes&nbsp;(list):&nbsp;Ressourcenlisten.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;agents&nbsp;(list):&nbsp;Alle&nbsp;Agenten.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;houses&nbsp;(list):&nbsp;Alle&nbsp;Häuser.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;is_day&nbsp;(bool):&nbsp;Tag/Nacht-Status.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;enemies&nbsp;(list):&nbsp;Liste&nbsp;von&nbsp;Gegnern.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;(status,&nbsp;data)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;status&nbsp;(str):&nbsp;"alive",&nbsp;"dead"&nbsp;oder&nbsp;"build_house".<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data:&nbsp;Zusatzinformationen,&nbsp;z.B.&nbsp;Hausmaterial&nbsp;und&nbsp;Position.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

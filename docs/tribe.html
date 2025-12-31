@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module Objects.tribe</title>
+<link rel="stylesheet" href="doc_style.css">
+<div id="navbar">
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="main.html">Main.py</a>
+        <a href="agent.html">Agent.py</a>
+        <a href="tribe.html">tribe.py</a>
+        <a href="enemy.html">Enemy.py</a>
+        <a href="house.html">House.py</a>
+        <a href="tree.html">Tree.py</a>
+        <a href="stone.html">Stone.py</a>
+        <a href="bush.html">Bush.py</a>
+    </nav>
+</div>
+</div>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="Objects.html" class="white">Objects</a>.tribe</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cfaktu%5Cdesktop%5Cvscode%5Clife%20sim%20ai%5Cobjects%5Ctribe.py">c:\users\faktu\desktop\vscode\life sim ai\objects\tribe.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="math.html">math</a><br>
+</td><td class="multicolumn"><a href="random.html">random</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="Objects.tribe.html#Tribe">Tribe</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Tribe">class <strong>Tribe</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Tribe">Tribe</a>(founder_agent,&nbsp;center_x,&nbsp;center_y,&nbsp;color=None)<br>
+&nbsp;<br>
+Repräsentiert&nbsp;einen&nbsp;Stamm&nbsp;(<a href="#Tribe">Tribe</a>)&nbsp;innerhalb&nbsp;der&nbsp;Welt.<br>
+&nbsp;<br>
+Ein&nbsp;<a href="#Tribe">Tribe</a>&nbsp;ist&nbsp;eine&nbsp;soziale&nbsp;Gruppierung&nbsp;von&nbsp;Agenten<br>
+mit&nbsp;einem&nbsp;gemeinsamen&nbsp;Ursprung&nbsp;(erstes&nbsp;Haus).<br>
+&nbsp;<br>
+Verantwortlichkeiten:<br>
+-&nbsp;Verwaltung&nbsp;der&nbsp;Mitglieder<br>
+-&nbsp;Festlegen&nbsp;eines&nbsp;Stammeszentrums<br>
+-&nbsp;Wachstum&nbsp;&amp;&nbsp;Abspaltung&nbsp;(neue&nbsp;Tribes)<br>
+-&nbsp;Organisation&nbsp;von&nbsp;Hausbau-Nähe<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Tribe-__init__"><strong>__init__</strong></a>(self, founder_agent, center_x, center_y, color=None)</dt><dd><span class="code">Erstellt&nbsp;einen&nbsp;neuen&nbsp;<a href="#Tribe">Tribe</a>.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;founder_agent&nbsp;(Agent):&nbsp;Erster&nbsp;Agent&nbsp;des&nbsp;Stammes<br>
+&nbsp;&nbsp;&nbsp;&nbsp;center_x&nbsp;(float):&nbsp;X-Koordinate&nbsp;des&nbsp;Stammeszentrums<br>
+&nbsp;&nbsp;&nbsp;&nbsp;center_y&nbsp;(float):&nbsp;Y-Koordinate&nbsp;des&nbsp;Stammeszentrums<br>
+&nbsp;&nbsp;&nbsp;&nbsp;color&nbsp;(tuple,&nbsp;optional):&nbsp;RGB-Farbe&nbsp;des&nbsp;Tribes</span></dd></dl>
+
+<dl><dt><a name="Tribe-add_member"><strong>add_member</strong></a>(self, agent)</dt><dd><span class="code">Fügt&nbsp;einen&nbsp;Agenten&nbsp;dem&nbsp;<a href="#Tribe">Tribe</a>&nbsp;hinzu.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;agent&nbsp;(Agent)</span></dd></dl>
+
+<dl><dt><a name="Tribe-average_age"><strong>average_age</strong></a>(self)</dt><dd><span class="code">Durchschnittsalter&nbsp;des&nbsp;Tribes.</span></dd></dl>
+
+<dl><dt><a name="Tribe-get_house_build_position"><strong>get_house_build_position</strong></a>(self)</dt><dd><span class="code">Gibt&nbsp;eine&nbsp;Position&nbsp;zurück,&nbsp;an&nbsp;der&nbsp;neue&nbsp;Häuser<br>
+für&nbsp;diesen&nbsp;<a href="#Tribe">Tribe</a>&nbsp;gebaut&nbsp;werden&nbsp;sollen.<br>
+&nbsp;<br>
+Häuser&nbsp;entstehen&nbsp;immer&nbsp;in&nbsp;Nähe&nbsp;des&nbsp;Stammeszentrums.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(x,&nbsp;y)</span></dd></dl>
+
+<dl><dt><a name="Tribe-is_overcrowded"><strong>is_overcrowded</strong></a>(self)</dt><dd><span class="code">Prüft,&nbsp;ob&nbsp;der&nbsp;<a href="#Tribe">Tribe</a>&nbsp;zu&nbsp;groß&nbsp;geworden&nbsp;ist.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="Tribe-population"><strong>population</strong></a>(self)</dt><dd><span class="code">Aktuelle&nbsp;Bevölkerungszahl.</span></dd></dl>
+
+<dl><dt><a name="Tribe-remove_member"><strong>remove_member</strong></a>(self, agent)</dt><dd><span class="code">Entfernt&nbsp;einen&nbsp;Agenten&nbsp;aus&nbsp;dem&nbsp;<a href="#Tribe">Tribe</a>.</span></dd></dl>
+
+<dl><dt><a name="Tribe-split"><strong>split</strong></a>(self)</dt><dd><span class="code">Spaltet&nbsp;einen&nbsp;neuen&nbsp;<a href="#Tribe">Tribe</a>&nbsp;ab.<br>
+&nbsp;<br>
+Ablauf:<br>
+-&nbsp;Hälfte&nbsp;der&nbsp;Mitglieder&nbsp;wird&nbsp;ausgewählt<br>
+-&nbsp;Neuer&nbsp;Mittelpunkt&nbsp;wird&nbsp;zufällig&nbsp;leicht&nbsp;versetzt<br>
+-&nbsp;Neuer&nbsp;<a href="#Tribe">Tribe</a>&nbsp;entsteht<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Tribe">Tribe</a>:&nbsp;Neuer&nbsp;<a href="#Tribe">Tribe</a>&nbsp;oder&nbsp;None</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

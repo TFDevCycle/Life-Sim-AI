@@ -1,0 +1,139 @@
+/* =======================
+   Grundlayout & Body
+   ======================= */
+body {
+    font-family: "Consolas", monospace;
+    background-color: #1e1e1e;
+    color: #dcdcdc;
+    margin: 0;
+    padding: 0;
+}
+
+/* =======================
+   Navbar
+   ======================= */
+#navbar {
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+#navbar nav {
+    display: flex;
+    gap: 15px;
+}
+
+#navbar nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+#navbar nav a:hover {
+    background-color: #555;
+}
+
+/* =======================
+   Tabellen-Layout
+   ======================= */
+table.heading, table.section {
+    width: 95%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+td.title {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+td.extra {
+    font-size: 0.9em;
+    color: #999;
+}
+
+/* =======================
+   Sections & Headers
+   ======================= */
+.section-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffa500; /* orange für Überschriften */
+    background-color: #2a2a2a;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.bigsection {
+    font-size: 1.4em;
+    color: #ffcc00;
+}
+
+/* =======================
+   Code & Methoden
+   ======================= */
+span.code {
+    display: block;
+    background-color: #2e2e2e;
+    color: #c5c8c6;
+    padding: 5px 8px;
+    border-left: 4px solid #ffa500;
+    margin: 5px 0;
+    border-radius: 2px;
+    font-family: "Consolas", monospace;
+    white-space: pre-wrap;
+}
+
+/* =======================
+   Klassen & Links
+   ======================= */
+a {
+    color: #66d9ef;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =======================
+   Dekoration & Separator
+   ======================= */
+.decor {
+    background-color: #2a2a2a;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #555;
+    margin: 20px 0;
+}
+
+/* =======================
+   Listen & Details
+   ======================= */
+ul, dl {
+    margin: 10px 0 10px 30px;
+}
+
+dt {
+    font-weight: bold;
+    color: #ffd700;
+}
+
+dd {
+    margin-left: 20px;
+    color: #cccccc;
+}
+
+/* =======================
+   Tabellen in Single-Column
+   ======================= */
+.singlecolumn {
+    width: 100%;
+}
